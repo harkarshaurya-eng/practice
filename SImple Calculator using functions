@@ -1,0 +1,60 @@
+import 'dart:io';
+
+void main(){
+  int a,b;
+  int? c;
+  stdout.writeln("Enter 'a' and 'b'");
+  a = int.parse(stdin.readLineSync()!);
+  b = int.parse(stdin.readLineSync()!);
+
+  int d;
+stdout.writeln("Enter operation");
+
+  stdout.writeln("[1]Addition \n [2]Subtraction \n [3]Multiplication \n [4] Division");
+  d = int.parse(stdin.readLineSync()!);
+
+  var ops = Operators();
+  if(d==1) {
+    ops.add(a, b, c);
+  }
+  else if(d==2) {
+    ops.sub(a, b, c);
+  }
+  else if(d==3)
+    {
+      ops.multi(a,b,c);
+    }
+  else if(d==4)
+    {
+      ops.div(a,b,c);
+      if(b==0)
+        {
+          stdout.write("(Not defined)");
+        }
+    }
+  else {
+    stdout.writeln("Chose correct operation");
+  }
+}
+class Operators{
+  void add(num a,b,c){
+    c=a+b;
+    stdout.writeln("Addition = $c");
+  }
+
+  void sub(num a,b,c){
+    c=a-b;
+    stdout.writeln("Subtraction = $c");
+  }
+  void multi(num a,b,c){
+    c=a*b;
+    stdout.writeln("Multiplication = $c");
+  }
+  void div(num a,b,c){
+    c=a/b;
+    stdout.writeln("Division = $c");
+  }
+
+
+}
+
