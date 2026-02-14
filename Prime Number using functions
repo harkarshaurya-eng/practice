@@ -1,10 +1,11 @@
 import 'dart:io';
 
-void main(){
+void main()
+{
 stdout.writeln("Enter number");
 int a = int.parse(stdin.readLineSync()!);
 int? i;
-var num = Number();
+var num = Number(); //call
 num.Prime(a,i);
 
 }
