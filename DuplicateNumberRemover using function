@@ -1,0 +1,47 @@
+import 'dart:io';
+
+void main() {
+  stdout.writeln("Duplicate number remover");
+  var list = <int>[];
+  int i,n;
+  int? j;
+
+  stdout.writeln("How many numbers would you like in the list of integers");
+  n = int.parse(stdin.readLineSync()!);
+
+  stdout.writeln("Enter $n integers:");
+
+  for(i=0;i<n;i++)
+  {
+    list.add(int.parse(stdin.readLineSync()!));
+  }
+stdout.writeln("The list is $list");
+
+  var LO =ListOps();
+  LO.DuplicateChecker(i, n, j,list);
+
+
+
+}
+class ListOps{
+  void DuplicateChecker(int i,n,j,List <int>list){
+    for(i=0;i<n-1;i++) {
+
+      bool isDuplicate = false;
+      for (j=i+1;j<list.length;j++)
+      {
+          if (list[i]==list[j])
+          {
+          isDuplicate = true;
+
+          }
+          if(isDuplicate==true)
+          {
+            list.removeAt(j);
+            j--;
+          }
+      }
+      }
+    stdout.writeln("Duplicates Removed $list");
+  }
+}
